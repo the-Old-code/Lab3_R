@@ -2,8 +2,6 @@
 #include <cstring>
 #define N 10000
 
-
-
 class CObject
 {
 public:
@@ -228,32 +226,22 @@ int main()
 	std::cout << "\n----------------------------------------------------------------\n";
 
 	for (int i = 0; i < myStorage.getCount()&& (i < N + N/7); i++) {
-		//std::cout << i << " ";
-
-		
 		switch (rand() % 5)
 		{
 		
 		case 0:
 			myStorage.addobject(new CVehicle());
-			//myStorage.getCObject(i)->someMethod();
 			break;
 		case 1:
 			myStorage.addobject(new CCar());
-			//myStorage.getCObject(i)->someMethod();
 			break;
 		case 2:
 			myStorage.delCObject(i);
-			//myStorage.getCObject(i);
 			break;
 		default:
 			myStorage.addobject(new CCircle());
-			//myStorage.getCObject(i)->someMethod();
 			break;
 		}
-
-
-		//std::cout << std::endl;
 	}
 
 	for (int i = 0; i < myStorage.getCount(); i++)
@@ -264,8 +252,5 @@ int main()
 		std::cout << std::endl;
 
 	}
-
-
-	
 	return 0;
 }
