@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <cstring>
+#include <ctime>
 #define N 10000
 
 class CObject
@@ -208,6 +209,8 @@ int main()
 {
 	setlocale(LC_ALL, "");
 	srand(time(NULL));
+	unsigned int start_time = clock(); 
+	
 	CObjectArray myStorage(N);
 	for (int i = 0; i < myStorage.getCount(); i++)
 	{
@@ -243,7 +246,8 @@ int main()
 			break;
 		}
 	}
-
+	unsigned int end_time = clock();
+	double search_time = end_time - start_time;
 	for (int i = 0; i < myStorage.getCount(); i++)
 	{
 		std::cout << i << " ";
@@ -252,5 +256,6 @@ int main()
 		std::cout << std::endl;
 
 	}
+	std::cout << "Время работы: " << search_time / 1000 << " с" << std::endl;
 	return 0;
 }
